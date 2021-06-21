@@ -1,4 +1,5 @@
 import juego
+from global_funcs import confirmer, select
 
 def jugar():
     P1 = input('INGRESE EL NOMBRE DEL JUGADOR 1 (INGRESE 0 PARA VOLVER ATRAS):\n')
@@ -13,7 +14,7 @@ def configuracion():
     print('EN CONSTRUCCION')
     menu = '1. CONFIGURAR INTENTOS, 2. REGRESAR, 3. SALIR'
     funcs = [config_intentos,'',salir]
-    select(menu, 1, len(funcs))
+    funcs[select(menu, 1, len(funcs)) - 1]()
 
 def config_intentos():
     while True:
@@ -36,17 +37,6 @@ def highscore():
 def salir():
     global flag 
     flag = False
-
-def confirmer(value, start = 0, end = 0):
-    return value.isdigit() and start <= int(value) <= end
-
-def select(menu, start = 1, end = 1):
-    while True:
-        print(('\n').join(menu.split(', ')))
-        inp = input('Selecione opcion: '.upper())
-        if confirmer(inp, start = 1, end = 1):
-            return int(inp)
-        print('OPCION INCORRECTA. INTENTE DE NUEVO.')
 
 intentos = 3
 flag = True
