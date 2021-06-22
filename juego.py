@@ -1,3 +1,4 @@
+#HOTFIX v0.0.1
 from random import randint
 from global_funcs import confirmer, select
 
@@ -54,7 +55,7 @@ def start(P1, P2, intentos):
     if inp in (temp := [x[0] for x in all_chr]):
         p2.setchar(all_chr[temp.index(inp)])
     game(p1, p2)
-    print(f"felicidades {gamewinner}".upper())
+    print(f"FELICIDADES {gamewinner}")
 
 def game(p1, p2):
     while True:
@@ -75,15 +76,14 @@ def gameloop(player, notPlayer):
     if sel == 1:
         inp = input('QUIEN:')
         anws = adiv(player, notPlayer, inp)
-        if  anws == True:
+        if anws == True:
             return True
-        else:
-            player.intentos = player.intentos - 1
-            print(f"Tiene {player.intentos} intentos")
-            if player.intentos == 0:
-                print(f"Lo siento {player.name}, se quedo sin intentos")
-                gamewinner = notPlayer.name
-                return True
+        player.intentos = player.intentos - 1
+        print(f"Tiene {player.intentos} intentos")
+        if player.intentos == 0:
+            print(f"Lo siento {player.name}, se quedo sin intentos")
+            gamewinner = notPlayer.name
+            return True
     if sel == 2:
         inp = input('PREGUNTA: ')
         anws = preg(player, notPlayer, inp)

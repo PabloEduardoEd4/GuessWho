@@ -1,3 +1,4 @@
+#HOTFIX v0.0.1
 import juego
 from global_funcs import confirmer, select
 
@@ -14,7 +15,10 @@ def configuracion():
     print('EN CONSTRUCCION')
     menu = '1. CONFIGURAR INTENTOS, 2. REGRESAR, 3. SALIR'
     funcs = [config_intentos,'',salir]
-    funcs[select(menu, 1, len(funcs)) - 1]()
+    index = select(menu, 1, len(funcs))
+    if index == 2:
+        return True
+    funcs[index-1]()
 
 def config_intentos():
     while True:
@@ -38,8 +42,11 @@ def salir():
     global flag 
     flag = False
 
-intentos = 3
+global flag
+global intentos
 flag = True
+intentos = 3
+
 
 def main():
     while flag:
