@@ -1,3 +1,4 @@
+#GuessWho v1.1
 import juego
 from global_funcs import confirmer, select
 
