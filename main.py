@@ -1,4 +1,4 @@
-#HOTFIX v0.0.1
+#GuessWho v1.0
 import juego
 from global_funcs import confirmer, select
 

@@ -1,4 +1,4 @@
-#HOTFIX v0.0.1
+#GuessWho v1.0
 def confirmer(value, start = 0, end = 0):
     return value.isdigit() and start <= int(value) <= end
 
