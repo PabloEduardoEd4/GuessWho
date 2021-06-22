@@ -1,4 +1,4 @@
-#GuessWho v1.0
+#GuessWho v1.1
 def confirmer(value, start = 0, end = 0):
     return value.isdigit() and start <= int(value) <= end
 

@@ -1,4 +1,4 @@
-#GuessWho v1.0
+#GuessWho v1.1
 from random import randint
 from global_funcs import confirmer, select
 
@@ -46,16 +46,19 @@ def start(P1, P2, intentos):
     all_chr = random_generador(nombres, descriptores, 6)
     p1 = Player(P1, all_chr[:], intentos)
     p2 = Player(P2, all_chr[:], intentos)
-    print(f"{' '.join([str(x) for x in all_chr][0:3])}\n{' '.join([str(x) for x in all_chr][3:6])}")
-    inp = input(f'Elige tu personaje misterio, {P1}\n')
-    if inp in (temp := [x[0] for x in all_chr]):
-        p1.setchar(all_chr[temp.index(inp)])
-    print(f"{' '.join([str(x) for x in all_chr][0:3])}\n{' '.join([str(x) for x in all_chr][3:6])}")
-    inp = input(f'Elige tu personaje misterio, {P2}\n')
-    if inp in (temp := [x[0] for x in all_chr]):
-        p2.setchar(all_chr[temp.index(inp)])
+    p1.setchar(name_selector(all_chr, P1))
+    p2.setchar(name_selector(all_chr, P2))
     game(p1, p2)
     print(f"FELICIDADES {gamewinner}")
+    
+
+def name_selector(all_chr, P):
+    while True:
+        print(f"{' '.join([str(x) for x in all_chr][0:3])}\n{' '.join([str(x) for x in all_chr][3:6])}")
+        inp = input(f'Elige tu personaje misterio, {P}\n')
+        if inp in (temp := [x[0] for x in all_chr]):
+            return all_chr[temp.index(inp)]
+        print('OPCION INCORRECTA. INTENTE DE NUEVO.')
 
 def game(p1, p2):
     while True:
@@ -132,4 +135,5 @@ def main():
     
 
 if __name__ == '__main__':
-    main()
+  main()
+   
