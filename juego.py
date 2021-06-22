@@ -54,7 +54,7 @@ def start(P1, P2, intentos):
     if inp in (temp := [x[0] for x in all_chr]):
         p2.setchar(all_chr[temp.index(inp)])
     game(p1, p2)
-    print(f"felicidades {gamewinner}".upper())
+    print(f"FELICIDADES {gamewinner}")
 
 def game(p1, p2):
     while True:
