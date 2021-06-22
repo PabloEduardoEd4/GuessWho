@@ -41,8 +41,11 @@ def salir():
     global flag 
     flag = False
 
-intentos = 3
+global flag
+global intentos
 flag = True
+intentos = 3
+
 
 def main():
     while flag:
