@@ -50,6 +50,7 @@ def start(P1, P2, intentos):
     p2.setchar(name_selector(all_chr, P2))
     game(p1, p2)
     print(f"FELICIDADES {gamewinner}")
+    input("Apreta enter para volver al menu")
     
 
 def name_selector(all_chr, P):
