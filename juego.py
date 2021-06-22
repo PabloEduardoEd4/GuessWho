@@ -1,4 +1,4 @@
-#GuessWho v1.1
+# GuessWho v1.1.1
 from random import randint
 from global_funcs import confirmer, select
 
