@@ -1,3 +1,4 @@
+#HOTFIX v0.0.1
 from random import randint
 from global_funcs import confirmer, select
 
