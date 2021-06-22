@@ -14,7 +14,10 @@ def configuracion():
     print('EN CONSTRUCCION')
     menu = '1. CONFIGURAR INTENTOS, 2. REGRESAR, 3. SALIR'
     funcs = [config_intentos,'',salir]
-    funcs[select(menu, 1, len(funcs)) - 1]()
+    index = select(menu, 1, len(funcs))
+    if index == 2:
+        return True
+    funcs[index-1]()
 
 def config_intentos():
     while True:
