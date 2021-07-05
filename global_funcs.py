@@ -9,3 +9,6 @@ def select(menu, start = 1, end = 1):
         if confirmer(inp, start, end):
             return int(inp)
         print('OPCION INCORRECTA. INTENTE DE NUEVO.')
+    
+if __name__ == "__main__":
+    pass
